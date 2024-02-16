@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test site pairings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/standings.css') }}">
+  <script src="https://kit.fontawesome.com/984ede6d53.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="header">
+    <h1>Standings</h1>
+  </div>
+  
+  <div class="main">
+    <div class="container">
+      <h1>Novice Division Standings</h1>
+      <div class="pairinglist">
+        {% for p in nov_rankings %}
+          {% if loop.index == 1 %}
+            <p class='first'><i class="fa-solid fa-medal"></i> 1. {{p}} - {{nov_rankings[p]}}</p>
+          {% elif loop.index == 2 %}
+            <p class='second'>2. {{p}} - {{nov_rankings[p]}}</p>
+          {% elif loop.index == 3 %}
+            <p class='third'>3. {{p}} - {{nov_rankings[p]}}</p>
+          {% else %}
+            <p>{{loop.index}}. {{p}} - {{nov_rankings[p]}}</p>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <i class="fa-solid fa-chess-pawn fa-flip"></i>
+    </div>
+    <div class="container">
+      <h1>Beginner Division Standings</h1>
+      <div class="pairinglist" id='beg'>
+        <div class="sec1">
+          {% for p in beg_rankings %}
+            {% if loop.index == 1 %}
+              <p class='first'><i class="fa-solid fa-medal"></i> 1. {{p}} - {{beg_rankings[p]}}</p>
+            {% elif loop.index == 2 %}
+              <p class='second'>2. {{p}} - {{beg_rankings[p]}}</p>
+            {% elif loop.index == 3 %}
+              <p class='third'>3. {{p}} - {{beg_rankings[p]}}</p>
+            {% elif loop.index <= 8 %}
+              <p>{{loop.index}}. {{p}} - {{beg_rankings[p]}}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="sec2">
+          {% for p in beg_rankings %}
+            {% if loop.index > 8 %}
+              <p>{{loop.index}}. {{p}} - {{beg_rankings[p]}}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <i class="fa-solid fa-chess-rook fa-flip"></i>
+    </div>
+    <div class="container">
+      <h1>Intermediate Division Standings</h1>
+      <div class="pairinglist" id="beg">
+        <div class="sec1">
+          {% for p in int_rankings %}
+          {% if loop.index == 1 %}
+            <p class='first'><i class="fa-solid fa-medal"></i> 1. {{p}} - {{int_rankings[p]}}</p>
+          {% elif loop.index == 2 %}
+            <p class='second'>2. {{p}} - {{int_rankings[p]}}</p>
+          {% elif loop.index == 3 %}
+            <p class='third'>3. {{p}} - {{int_rankings[p]}}</p>
+          {% elif loop.index <= 8 %}
+            <p>{{loop.index}}. {{p}} - {{int_rankings[p]}}</p>
+          {% endif %}
+        {% endfor %}
+        </div>
+        <div class="sec2">
+          {% for p in int_rankings %}
+          {% if loop.index > 8 %}
+            <p>{{loop.index}}. {{p}} - {{int_rankings[p]}}</p>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      <i class="fa-solid fa-chess-queen fa-flip"></i>
+    </div>
+  </div>
+
+</body>
+</html>

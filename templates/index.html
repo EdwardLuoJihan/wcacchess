@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test site pairings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <script src="https://kit.fontawesome.com/984ede6d53.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="header">
+    <h1>Round Pairings</h1>
+  </div>
+
+  <div class="main">
+    <div class="container">
+      <h1>Novice Division Round {{nr}} Pairings</h1>
+      <div class="pairinglist">
+        {% for p in nov_pairings %}
+        <p>{{loop.index}}. {{p[0]}} vs. <span class="black">{{p[1]}}</span></p>
+        {% endfor %}
+      </div>
+      <i class="fa-solid fa-chess-pawn fa-flip"></i>
+    </div>
+    <div class="container">
+      <h1>Beginner Division Round {{br}} Pairings</h1>
+      <div class="pairinglist">
+        {% for p in beg_pairings %}
+        <p>{{loop.index}}. {{p[0]}} vs. <span class="black">{{p[1]}}</span></p>
+        {% endfor %}
+      </div>
+      <i class="fa-solid fa-chess-rook fa-flip"></i>
+    </div>
+    <div class="container">
+      <h1>Intermediate Division Round {{ir}} Pairings</h1>
+      <div class="pairinglist">
+        {% for p in int_pairings %}
+        <p>{{loop.index}}. {{p[0]}} vs. <span class="black">{{p[1]}}</span></p>
+        {% endfor %}
+      </div>
+      <i class="fa-solid fa-chess-queen fa-flip"></i>
+    </div>
+  </div>
+  
+</body>
+</html>

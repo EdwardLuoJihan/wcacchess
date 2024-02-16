@@ -1,0 +1,70 @@
+font-face {
+    font-family: "Bebas Neue";
+    src: url('tt/BebasNeue Bold.ttf') format('truetype'),
+      url('tt/BebasNeue Book.ttf') format('truetype'),
+      url('tt/BebasNeue Light.ttf') format('truetype'),
+      url('tt/BebasNeue Regular.ttf') format('truetype'),
+      url('tt/BebasNeue Thin.ttf') format('truetype'),
+  }
+  
+  .black {
+    font-weight: 900;
+  }
+  
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {  
+   padding: 0 80px; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 10px;
+    width: max-content;
+    max-width: max-content;
+    margin: 50px auto;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+  
+  .pairinglist {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .pairinglist p {
+    margin: 15px;
+  }
+  
+  .container h1 {
+    font-family: 'Bebas Neue';
+    font-weight: lighter;
+  }
+  
+  .main {
+    margin-top: 60px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .container {
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin: 30px;
+    padding: 50px; 
+    align-items: center;
+    text-align: center;  
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+  
+  .container i {
+    font-size: 50px;
+  }
